@@ -1,91 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:orientation="vertical"
+    android:weightSum="7"
     tools:context=".MainActivity">
 
+    <!-- 1, 2 -->
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <!-- 1, 2 -->
+        <ImageView
+            android:src="@drawable/logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageViewLogo"
-        android:layout_width="301dp"
-        android:layout_height="124dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/logo" />
-
-
+    <!-- 3 -->
     <TextView
-        android:id="@+id/textViewLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageViewLogo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
         android:text="Universal Traction Showroom and Autos UTSA"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
 
+    <!-- 4, 5, 6 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <!-- 1, 2 -->
+        <LinearLayout
+            android:weightSum="3"
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <!-- 1 -->
+            <ImageView
+                android:src="@drawable/toyota_camry_black"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+            <!-- 2 -->
+            <ImageView
+                android:src="@drawable/cheverolet_impala_red"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+            <!-- 3 -->
+            <ImageView
+                android:src="@drawable/bmw_8_series_gray"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
 
-    <ImageView
-        android:id="@+id/imageViewCar1"
-        android:layout_width="199dp"
-        android:layout_height="111dp"
-        android:layout_below="@+id/textViewLabel"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/bmw_8_series_gray" />
+        </LinearLayout>
+        <!-- 3 -->
+        <LinearLayout
+            android:weightSum="3"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <!-- 1 -->
+            <Button
+                android:id="@+id/btnCar1"
+                android:text="Show Price"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+            <!-- 2 -->
+            <Button
+                android:id="@+id/btnCar2"
+                android:text="Show Price"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+            <!-- 3 -->
+            <Button
+                android:id="@+id/btnCar3"
+                android:text="Show Price"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
 
-    <ImageView
-        android:id="@+id/imageViewCar2"
-        android:layout_width="164dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageViewCar1"
-        android:layout_marginStart="-200dp"
-        android:layout_marginTop="68dp"
-        android:layout_toEndOf="@id/imageViewCar1"
-        android:src="@drawable/cheverolet_impala_red" />
+        </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageViewCar3"
-        android:layout_width="189dp"
-        android:layout_height="104dp"
-        android:layout_below="@+id/imageViewCar2"
-        android:layout_marginTop="79dp"
-        android:src="@drawable/toyota_camry_black" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btnCar1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imageViewCar1"
-        android:layout_marginTop="-91dp"
-        android:layout_marginEnd="16dp"
-        android:layout_alignParentRight="true"
-        android:onClick="onClickCar1"
-        android:text="Show Price" />
+    <!-- 7 -->
+    <!-- Toast -->
 
-    <Button
-        android:id="@+id/btnCar2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnCar1"
-        android:layout_marginStart="62dp"
-        android:layout_marginTop="150dp"
-        android:layout_toEndOf="@+id/imageViewCar2"
-        android:onClick="onClickCar2"
-        android:text="Show Price" />
-
-    <Button
-        android:id="@+id/btnCar3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnCar2"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="161dp"
-        android:layout_marginRight="29dp"
-        android:layout_toEndOf="@+id/imageViewCar3"
-        android:onClick="onClickCar3"
-        android:text="Show Price" />
-
-</RelativeLayout>
+</LinearLayout>
